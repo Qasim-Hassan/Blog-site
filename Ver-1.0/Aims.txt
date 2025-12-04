@@ -1,7 +1,7 @@
 3 main goals for this full-stack blog app:
 
 1. Serve our assets --> html, css, image  files
-2. Add user's input to our db
+2. Add user's input to our db  --> Sanitize it so that no malicious code gets saved
 3. Provide that db to the frontend for being displayed
 
 

@@ -23,7 +23,7 @@ async function initApp(){
 
     });
 
-    publish.addEventListener("click",()=>{
+    publish.addEventListener("click",async ()=>{
         if (text.value.trim() ==="" || title.value.trim()===""){
             return;
         }
@@ -33,13 +33,25 @@ async function initApp(){
             text: text.value.trim()
         }
 
-        title.value = "",
-        text.value = ""
+        const upload = await fetch("/api",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        } );
 
-        window.location.href = "index.html";
+        if (upload.ok){
+            title.value = "";
+            text.value = "";
+            window.location.href = "index.html";
+        }else{
+            window.location.href = "404.html"
+        }
+
+        
     });
 
-    
 
     window.app = {}
 }

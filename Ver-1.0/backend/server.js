@@ -3,8 +3,9 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {getExt} from './utils/serveStatic.js'
 import { getData } from './getData.js';
-import { handleGet } from './handler.js';
+import { handleGet, handlePost } from './handler.js';
 import {fetchUnsplashImage} from './getImage.js';
+import {addData} from './setData.js';
 
 const __dirname = import.meta.dirname;  //-> abs path of server.js
 const PORT = 5000;
@@ -20,6 +21,25 @@ const server = http.createServer(async(req,res)=>{
             res.statusCode = 200;
             res.setHeader('Content-type','application/json');
             res.end(content)
+        }else if (req.method === 'POST'){
+            let packets = '';
+
+            for await(const chunk of req){
+                packets += chunk;               //Node seperates headers, methods, etc. from req under the hood, leaving only the "BODY"
+            }
+
+            try{
+                const alterData = await handlePost(packets);
+                
+                await addData( await alterData);
+
+                res.statusCode = 201;
+                res.end();
+            }catch(err){
+                res.statusCode = 400;
+                console.log(err);
+                res.end()
+            }
         }
     }else if (url.pathname === '/api/image'){
         const title = url.searchParams.get("title");
