@@ -10,7 +10,7 @@ async function initApp (){
   }
 
   const posts = await getreq();
-  console.log(JSON.stringify(posts,null,2));
+  // console.log(JSON.stringify(posts,null,2));
   const homeView = document.getElementById("home-view");
   const readerView = document.getElementById("reader-view");
   const article = document.getElementById("article-content");

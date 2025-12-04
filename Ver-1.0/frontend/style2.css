@@ -91,6 +91,11 @@ h1, h2, h3, h4, h5, h6,
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+#publish-btn.disabled{
+  cursor: not-allowed;
+  background-color: #444342;
+  color: #9c9c9c;
+}
 
 #publish-btn:hover {
   background-color: #44403c; /* stone-700 */
