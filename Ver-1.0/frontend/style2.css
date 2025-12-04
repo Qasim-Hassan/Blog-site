@@ -1,0 +1,249 @@
+/* ================= BASE TYPOGRAPHY ================= */
+/* Added box-sizing and prevented horizontal overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fafaf9; /* stone-50 */
+  color: #1c1917; /* stone-900 */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  /* NEW: use column flex layout so header + main size properly.
+     This makes main take remaining viewport space and prevents
+     the page from overflowing vertically unless content grows. */
+  display: flex;
+  flex-direction: column;
+
+  /* prevent accidental horizontal overflow */
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-serif {
+  font-family: 'Merriweather', serif;
+}
+
+/* ================= HEADER ================= */
+#page-header {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f5f5f4; /* stone-100 */
+  background-color: #fafaf9; /* stone-50 */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  /* ensure header does not flex-grow and participates correctly in column flow */
+  flex: 0 0 auto;
+}
+
+#header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#back-home-btn {
+  color: #a8a29e; /* stone-400 */
+  transition: color 0.3s ease;
+}
+
+#back-home-btn:hover {
+  color: #1c1917; /* stone-900 */
+}
+
+#site-logo {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+#header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#publish-btn {
+  background-color: #1c1917; /* stone-900 */
+  color: #fafaf9; /* stone-50 */
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#publish-btn:hover {
+  background-color: #44403c; /* stone-700 */
+}
+
+/* ================= MAIN EDITOR ================= */
+/* Make main flex:1 so it occupies remaining viewport space.
+   This prevents the page from being taller than the viewport by default.
+   When content grows, the document will scroll vertically as desired. */
+#editor-main {
+  flex: 1 0 auto;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 6rem; /* reduced bottom padding to avoid accidental overflow */
+  width: 100%;
+  /* allow the main content to grow with the document when necessary */
+  min-height: 0; /* important for flex children to allow proper scrolling */
+}
+
+/* Keep your existing spacing for sections */
+#cover-placeholder {
+  margin-bottom: 2.5rem;
+}
+
+#img-link{
+    text-decoration: none;
+    color: #a8a29e;
+}
+
+#add-cover-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a8a29e; /* stone-400 */
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#add-cover-btn:hover {
+  color: #292524; /* stone-800 */
+}
+
+/* Title Input */
+#title-container {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+#story-title {
+  width: 100%;
+  font-size: 2.5rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  color: #1c1917;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  #story-title {
+    font-size: 3rem;
+  }
+}
+
+#story-title::placeholder {
+  color: #d6d3d1; /* stone-300 */
+}
+
+/* Story Textarea */
+#story-container {
+  position: relative;
+}
+
+/* Minor improvements to the textarea so auto-resize behaves well:
+   - min-height gives a reasonable default and avoids tiny 1-row height
+   - line-height retained so visual remains same
+*/
+#story-textarea {
+  width: 100%;
+  font-size: 1.125rem;
+  font-family: 'Merriweather', serif;
+  line-height: 1.75;
+  color: #292524; /* stone-800 */
+  background: transparent;
+  border: none;
+  padding: 0;
+  resize: none;
+
+  /* NEW: set a sensible min-height and allow it to expand */
+  min-height: 240px;
+  /* let the textarea's inline oninput keep increasing its height */
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  #story-textarea {
+    font-size: 1.25rem;
+  }
+}
+
+#story-textarea::placeholder {
+  color: #d6d3d1; /* stone-300 */
+}
+
+/* ================= INPUT BEHAVIOR ================= */
+.editor-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hide scrollbar for textarea */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ================= FOOTER ================= */
+#site-footer {
+  background-color: #fafaf9; /* matches page background */
+  border-top: 1px solid #e7e5e4; /* subtle top border */
+  padding: 1.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #78716c; /* stone-500 */
+  font-family: 'Inter', sans-serif;
+}
+
+#site-footer a {
+  color: #1c1917; /* dark text for links */
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+#site-footer a:hover {
+  color: #44403c; /* darker on hover */
+}
+
+.footer-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.unsplash-note {
+  font-size: 0.75rem;
+  color: #a8a29e; /* lighter text for secondary note */
+}

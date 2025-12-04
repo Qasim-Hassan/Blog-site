@@ -1,0 +1,15 @@
+3 main goals for this full-stack blog app:
+
+1. Serve our assets --> html, css, image  files
+2. Add user's input to our db
+3. Provide that db to the frontend for being displayed
+
+
+Specific:
+ Script.js will fetch api
+ it'd bring in the json data stored in data.json
+ that data w'd be stored in posts array
+ on each iteration will a html section of articles be created with only the heading for now. (inside js)
+ this section then appended as child to the posts-grid.
+ When a blog clicked, it'd open in readerview and the code for that is pre-written.
+ 

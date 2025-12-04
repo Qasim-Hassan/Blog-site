@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SereneReader</title>
+  <link rel="icon" href="favicon.svg?v=1" type="image/svg+xml">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= NAVIGATION BAR ================= -->
+  <nav id="main-navbar">
+    <div class="navbar-container">
+      
+      <!-- Logo / Brand -->
+      <span id="brand-logo" onclick="window.app.showHome()">
+        SereneReader.
+      </span>
+
+      <!-- Write Story Button -->
+      <a href="write.html" class="write-link">
+        <button id="btn-write-nav" onclick="window.app.handleWriteClick()">
+          <!-- Pen Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+          </svg>
+          <span class="btn-text">Write a Story</span>
+        </button>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ================= MAIN APP CONTAINER ================= -->
+  <div id="app-container">
+
+    <!-- ===== HOME VIEW ===== -->
+    <section id="home-view" class="fade-in">
+      <div class="home-container">
+
+        <!-- Page Header -->
+        <header id="home-header">
+          <h1>SereneReader.</h1>
+          <p>Thoughts, stories, and ideas from the community.</p>
+        </header>
+
+        <!-- Blog Posts Grid -->
+        <div id="posts-grid">
+            <!-- Posts injected dynamically via JavaScript -->
+            <!-- <article class="post-card" onclick="window.app.openPost(0)">
+              <img src="https://picsum.photos/400/250?random=1" alt="Mock 1">
+              <h2>The Serenity of Early Mornings</h2>
+              <p>A reflection on calm beginnings...</p>
+            </article> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== READER VIEW ===== -->
+    <section id="reader-view" class="hidden">
+      
+      <!-- LEFT: Article Content -->
+      <div id="reader-main">
+
+        <!-- Mobile Header with Back Button -->
+        <div id="reader-header">
+          <button id="btn-back-home" onclick="window.app.showHome()">
+            <!-- Back Arrow Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+          </button>
+        </div>
+
+        <!-- Scrollable Article Area -->
+        <div id="article-scroll-container">
+          <article id="article-content">
+            <!-- Full article injected dynamically -->
+          </article>
+        </div>
+      </div>
+
+      <!-- RIGHT: Sidebar (Desktop Only) -->
+      <aside id="reader-sidebar">
+
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+          <h3>More Stories</h3>
+        </div>
+
+        <!-- Sidebar List -->
+        <div id="sidebar-list">
+          <!-- Sidebar items injected dynamically -->
+        </div>
+
+        <!-- Sidebar Write Button -->
+        <div class="sidebar-footer">
+          <a href="write.html" class="write-link">
+            <button id="btn-write-sidebar">
+              
+              <!-- Pen Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+              </svg>
+              <span>Write a Story</span>
+            </button>
+          </a>
+        </div>
+      </aside>
+    </section>
+  </div>
+  
+    <!-- ================= FOOTER ================= -->
+  <footer id="site-footer">
+    <div class="footer-container">
+      <p>
+        &copy; 2025 SereneReader. All rights reserved.
+      </p>
+      <p class="unsplash-note">
+        Cover images powered by <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ================= APPLICATION LOGIC ================= -->
+  <script src="script.js" defer></script>
+</body>
+</html>
