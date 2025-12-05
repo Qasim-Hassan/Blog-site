@@ -1,6 +1,7 @@
 //Handle GET request
 
 import { getData } from "./getData.js";
+import sanitizeHTML from 'sanitize-html';
 
 async function handleGet(){
     const jsonData = await getData();
@@ -13,7 +14,13 @@ async function handleGet(){
 async function handlePost(data){
     const jsonData = await getData();
 
-    jsonData.push(JSON.parse(data));
+    const sanitizedData = {};   //-> sanitizing data
+    
+    for (const [key,value] of Object.entries(JSON.parse(data))){
+        sanitizedData[key] = sanitizeHTML(value, { allowedTags: ['b'], allowedAttributes: {}})
+    }
+
+    jsonData.push(sanitizedData);
     return jsonData;
 }
 
