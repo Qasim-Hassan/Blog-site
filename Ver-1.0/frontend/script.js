@@ -41,11 +41,11 @@ async function initApp (){
 
   function openPost(index) {
     const post = posts[index];
-
+    const formatted = post.text.replace(/\n/g, "<br>");
     // fill article area
     article.innerHTML = `
       <h1>${post.title}</h1>
-      ${post.text}
+      ${formatted}
     `;
 
     populateSidebar(index);
