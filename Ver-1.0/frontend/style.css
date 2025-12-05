@@ -289,6 +289,9 @@ h1, h2, h3, h4, h5, h6,
 .post-card img {
   width: 100%;
   display: block;
+  height: 400px;      /* fixed height */
+  object-fit: cover;  /* crop to fill without distortion */
+  border-radius: 0.25rem; /* optional rounded corners */
 }
 
 .post-card h2 {
