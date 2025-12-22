@@ -10,6 +10,6 @@
   "author": "Tommy",
   "license": "ISC",
   "dependencies": {
-    "sanitize-html": "^2.17.0"
+    "sanitize-html": "2.17.0"
   }
 }
