@@ -1,9 +1,9 @@
-#Blogging Site
+# Blogging Site
 
-##Introduction
+## Introduction
 Made with **Node JS**(Backend) and **Vanilla JS**(Frontend), it uses a javascript file to store the blog posts. 
 
-##How to run
+## How to run
 Navigate to both the "frontend" and the "backend" repositories, and then type:
 <pre>npm install</pre>
 to install all dependencies for both the repos.
