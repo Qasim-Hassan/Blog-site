@@ -1,12 +1,37 @@
 # Blogging Site
 
 ## Introduction
-Made with **Node JS**(Backend) and **Vanilla JS**(Frontend), it uses a javascript file to store the blog posts. 
+
+Simple blogging site to write and store your personal blogs on your computer.
+
+----
+
+## Tech Stack
+
+- Vanilla JS (frontend)
+- Node JS (backend)
+
+---
 
 ## How to run
-Navigate to both the "frontend" and the "backend" repositories, and then type:
+
+Clone the repository and then navigate to both the "frontend" and the "backend" directories at a time, and then type:
 <pre>npm install</pre>
 to install all dependencies for both the repos.
+
 Then, inside the "backend" directory, type:
 <pre>node server.js</pre>
-open localhost:5000 to see the app runnning.
+
+Open *localhost:5000* to see the app runnning.
+
+----
+
+## Contributing
+
+Any meaningful contributions to this project are welcome.
+
+----
+
+## License
+
+This project is licensed under the MIT License
