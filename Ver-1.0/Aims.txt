@@ -10,4 +10,3 @@ Specific:
  it'd bring in the json data stored in data.json
  that data w'd be stored in posts array
  on each iteration will a html section of articles be created with only the heading for now. (inside js)
- this section then appended as child to the posts-grid.
