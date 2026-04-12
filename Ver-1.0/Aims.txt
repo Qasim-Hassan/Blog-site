@@ -1,2 +1,3 @@
 Serve static assets.
 
+Safely store the blogposts in text file.
