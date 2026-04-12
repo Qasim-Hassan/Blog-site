@@ -1,1 +1,2 @@
+Serve static assets.
 
