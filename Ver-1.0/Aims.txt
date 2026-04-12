@@ -11,5 +11,3 @@ Specific:
  that data w'd be stored in posts array
  on each iteration will a html section of articles be created with only the heading for now. (inside js)
  this section then appended as child to the posts-grid.
- When a blog clicked, it'd open in readerview and the code for that is pre-written.
- 
