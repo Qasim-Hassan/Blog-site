@@ -1,3 +1,4 @@
 Serve static assets.
 
 Safely store the blogposts in text file.
+Integrate auto generated images 
