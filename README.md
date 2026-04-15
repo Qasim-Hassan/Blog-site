@@ -15,7 +15,7 @@ Simple blogging site to write and store your personal blogs on your computer.
 
 ## How to run
 
-Clone the repository and then navigate to both the "frontend" and the "backend" directories at a time, and then type:
+Clone the repository and then navigate to the "backend" directory in "Ver-1.0" inside your terminal, and run:
 
 <pre>npm install</pre>
 
