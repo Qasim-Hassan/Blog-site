@@ -17,7 +17,7 @@ Simple blogging site to write and store your personal blogs on your computer.
 
 Clone the repository and then navigate to both the "frontend" and the "backend" directories at a time, and then type:
 <pre>npm install</pre>
-to install all dependencies for both the repos.
+to install all dependencies the repository.
 
 Then, inside the "backend" directory, type:
 <pre>node server.js</pre>
